@@ -64,3 +64,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-02-03T14:02:02.959296+07:00,Nha Trang,54,/dl/web/weather/ic-w-01-clear-sky-full.svg,18.2 km/h,67%
 2025-02-03T15:02:14.709274+07:00,Nha Trang,54,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,18.8 km/h,67%
 2025-02-03T16:02:11.063467+07:00,Nha Trang,54,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,18.2 km/h,65%
+2025-02-03T17:02:08.783870+07:00,Nha Trang,41,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,18.3 km/h,68%
