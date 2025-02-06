@@ -131,3 +131,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-02-06T10:04:31.120495+07:00,Cần Thơ,75,/dl/web/weather/ic-w-09-mist-full.svg,0.0 km/h,88%
 2025-02-06T11:02:06.794564+07:00,Cần Thơ,84,/dl/web/weather/ic-w-02-new-clouds-full.svg,3.7 km/h,83%
 2025-02-06T12:02:13.786610+07:00,Cần Thơ,84,/dl/web/weather/ic-w-02-new-clouds-full.svg,3.7 km/h,74%
+2025-02-06T13:02:17.147436+07:00,Cần Thơ,84,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,5.5 km/h,62%
