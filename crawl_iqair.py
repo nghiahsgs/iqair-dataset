@@ -13,22 +13,22 @@ CITIES = [
     {
         "name": "hanoi",
         "display_name": "Hà Nội",
-        "url": "https://www.iqair.com/vietnam/hanoi"
+        "url": "https://www.iqair.com/vi/vietnam/hanoi/hanoi"
     },
     {
         "name": "ho-chi-minh-city",
         "display_name": "Hồ Chí Minh",
-        "url": "https://www.iqair.com/vietnam/ho-chi-minh-city"
+        "url": "https://www.iqair.com/vi/vietnam/ho-chi-minh-city/ho-chi-minh-city"
     },
     {
         "name": "da-nang",
         "display_name": "Đà Nẵng",
-        "url": "https://www.iqair.com/vietnam/da-nang"
+        "url": "https://www.iqair.com/vi/vietnam/da-nang/da-nang"
     },
     {
         "name": "hai-phong",
         "display_name": "Hải Phòng",
-        "url": "https://www.iqair.com/vietnam/thanh-pho-hai-phong/haiphong"
+        "url": "https://www.iqair.com/vi/vietnam/thanh-pho-hai-phong/haiphong"
     },
     {
         "name": "nha-trang",
