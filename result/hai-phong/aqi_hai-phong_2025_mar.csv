@@ -418,3 +418,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-03-18T12:02:03.873538+07:00,Hải Phòng,105,/dl/web/weather/ic-w-01-clear-sky-full.svg,13.0 km/h,48%
 2025-03-18T13:01:59.671698+07:00,Hải Phòng,105,/dl/web/weather/ic-w-01-clear-sky-full.svg,11.1 km/h,45%
 2025-03-18T14:02:01.670877+07:00,Hải Phòng,110,/dl/web/weather/ic-w-01-clear-sky-full.svg,14.8 km/h,45%
+2025-03-18T15:02:19.216598+07:00,Hải Phòng,102,/dl/web/weather/ic-w-02-new-clouds-full.svg,13.0 km/h,43%
