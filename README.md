@@ -120,3 +120,45 @@ Dự án này chỉ thu thập và cung cấp dữ liệu thô từ nguồn th�
 Đây là một dự án mã nguồn mở vì cộng đồng. Mọi đóng góp đều được hoan nghênh. Vui lòng tạo pull request hoặc issue nếu bạn muốn cải thiện dự án.
 
 ## Vì 1 tương lai xanh <3
+
+## Biểu đồ chất lượng không khí trong 30 ngày gần nhất
+
+### Hà Nội
+<!-- HANOI_CHART_START -->
+![AQI Trend Hanoi](charts/aqi_trend_hanoi.png)
+<!-- HANOI_CHART_END -->
+
+### Hồ Chí Minh
+<!-- HCMC_CHART_START -->
+![AQI Trend Ho Chi Minh](charts/aqi_trend_ho-chi-minh-city.png)
+<!-- HCMC_CHART_END -->
+
+### Đà Nẵng
+<!-- DANANG_CHART_START -->
+![AQI Trend Da Nang](charts/aqi_trend_da-nang.png)
+<!-- DANANG_CHART_END -->
+
+### Huế
+<!-- HUE_CHART_START -->
+![AQI Trend Hue](charts/aqi_trend_hue.png)
+<!-- HUE_CHART_END -->
+
+### Nha Trang
+<!-- NHATRANG_CHART_START -->
+![AQI Trend Nha Trang](charts/aqi_trend_nha-trang.png)
+<!-- NHATRANG_CHART_END -->
+
+### Cần Thơ
+<!-- CANTHO_CHART_START -->
+![AQI Trend Can Tho](charts/aqi_trend_can-tho.png)
+<!-- CANTHO_CHART_END -->
+
+### Hải Phòng
+<!-- HAIPHONG_CHART_START -->
+![AQI Trend Hai Phong](charts/aqi_trend_hai-phong.png)
+<!-- HAIPHONG_CHART_END -->
+
+### Vinh
+<!-- VINH_CHART_START -->
+![AQI Trend Vinh](charts/aqi_trend_vinh.png)
+<!-- VINH_CHART_END -->

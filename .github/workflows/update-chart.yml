@@ -1,0 +1,43 @@
+name: Update AQI Charts
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Chạy vào 00:00 UTC mỗi ngày
+  workflow_run:
+    workflows: ["Crawl Data"]  # Chạy sau khi crawl data xong
+    types:
+      - completed
+  workflow_dispatch:  # Cho phép chạy thủ công
+
+jobs:
+  update-charts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Lấy toàn bộ lịch sử để đảm bảo có đủ dữ liệu
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas matplotlib seaborn
+          
+      - name: Generate charts
+        run: python scripts/generate_chart.py
+        
+      - name: Commit and push changes
+        run: |
+          # Configure git
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # Add and commit changes
+          git add charts/*.png
+          git commit -m "Update AQI charts (daily update)" || echo "No changes to commit"
+          git push 
