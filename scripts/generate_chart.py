@@ -4,6 +4,7 @@ import seaborn as sns
 from datetime import datetime, timedelta
 import os
 import glob
+import unidecode  # Thêm thư viện để bỏ dấu tiếng Việt
 
 # Đọc tất cả các file CSV từ các thư mục thành phố
 all_files = []
@@ -63,6 +64,9 @@ for city in df_month['city'].unique():
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.tight_layout()
     
-    # Lưu biểu đồ
-    plt.savefig(f'charts/aqi_trend_{city.lower().replace(" ", "_")}.png', dpi=300, bbox_inches='tight')
+    # Chuyển tên thành phố thành không dấu và lowercase cho tên file
+    city_filename = unidecode.unidecode(city.lower()).replace(' ', '-')
+    
+    # Lưu biểu đồ với tên file không dấu
+    plt.savefig(f'charts/aqi_trend_{city_filename}.png', dpi=300, bbox_inches='tight')
     plt.close()  # Đóng figure để giải phóng bộ nhớ 

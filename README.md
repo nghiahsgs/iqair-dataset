@@ -123,22 +123,22 @@ Dự án này chỉ thu thập và cung cấp dữ liệu thô từ nguồn th�
 
 ## Biểu đồ chất lượng không khí trong 30 ngày gần nhất
 
-### Hà Nội
+### Ha Noi
 <!-- HANOI_CHART_START -->
 ![AQI Trend Hanoi](charts/aqi_trend_hanoi.png)
 <!-- HANOI_CHART_END -->
 
-### Hồ Chí Minh
+### Ho Chi Minh
 <!-- HCMC_CHART_START -->
 ![AQI Trend Ho Chi Minh](charts/aqi_trend_ho-chi-minh-city.png)
 <!-- HCMC_CHART_END -->
 
-### Đà Nẵng
+### Da Nang
 <!-- DANANG_CHART_START -->
 ![AQI Trend Da Nang](charts/aqi_trend_da-nang.png)
 <!-- DANANG_CHART_END -->
 
-### Huế
+### Hue
 <!-- HUE_CHART_START -->
 ![AQI Trend Hue](charts/aqi_trend_hue.png)
 <!-- HUE_CHART_END -->
@@ -148,12 +148,12 @@ Dự án này chỉ thu thập và cung cấp dữ liệu thô từ nguồn th�
 ![AQI Trend Nha Trang](charts/aqi_trend_nha-trang.png)
 <!-- NHATRANG_CHART_END -->
 
-### Cần Thơ
+### Can Tho
 <!-- CANTHO_CHART_START -->
 ![AQI Trend Can Tho](charts/aqi_trend_can-tho.png)
 <!-- CANTHO_CHART_END -->
 
-### Hải Phòng
+### Hai Phong
 <!-- HAIPHONG_CHART_START -->
 ![AQI Trend Hai Phong](charts/aqi_trend_hai-phong.png)
 <!-- HAIPHONG_CHART_END -->
