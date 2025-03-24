@@ -125,12 +125,12 @@ Dự án này chỉ thu thập và cung cấp dữ liệu thô từ nguồn th�
 
 ### Ha Noi
 <!-- HANOI_CHART_START -->
-![AQI Trend Hanoi](charts/aqi_trend_hanoi.png)
+![AQI Trend Hanoi](charts/aqi_trend_ha-noi.png)
 <!-- HANOI_CHART_END -->
 
 ### Ho Chi Minh
 <!-- HCMC_CHART_START -->
-![AQI Trend Ho Chi Minh](charts/aqi_trend_ho-chi-minh-city.png)
+![AQI Trend Ho Chi Minh](charts/aqi_trend_ho-chi-minh.png)
 <!-- HCMC_CHART_END -->
 
 ### Da Nang
