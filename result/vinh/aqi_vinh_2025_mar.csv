@@ -594,3 +594,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-03-26T01:02:24.222237+07:00,Vinh,100,/dl/web/weather/ic-w-10-night-clear-sky-full.svg,2.1 km/h,83%
 2025-03-26T02:02:14.691775+07:00,Vinh,118,/dl/web/weather/ic-w-10-night-clear-sky-full.svg,4.0 km/h,84%
 2025-03-26T03:02:15.046688+07:00,Vinh,118,/dl/web/weather/ic-w-11-night-few-clouds-full.svg,5.0 km/h,88%
+2025-03-26T04:02:08.458579+07:00,Vinh,118,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,4.2 km/h,90%
