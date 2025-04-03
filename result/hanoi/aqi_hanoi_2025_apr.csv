@@ -55,3 +55,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-04-03T05:01:31.908361+07:00,Hà Nội,153,/dl/web/weather/ic-w-10-night-clear-sky-full.svg,7.6 km/h,62%
 2025-04-03T06:01:30.715297+07:00,Hà Nội,155,/dl/web/weather/ic-w-10-night-clear-sky-full.svg,6.0 km/h,63%
 2025-04-03T07:04:24.398051+07:00,Hà Nội,156,/dl/web/weather/ic-w-01-clear-sky-full.svg,5.8 km/h,65%
+2025-04-03T08:28:48.268722+07:00,Hà Nội,165,/dl/web/weather/ic-w-02-new-clouds-full.svg,6.6 km/h,50%
