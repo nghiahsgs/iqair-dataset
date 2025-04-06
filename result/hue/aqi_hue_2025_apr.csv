@@ -126,3 +126,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-04-06T07:05:26.664951+07:00,Huế,88,/dl/web/weather/ic-w-09-mist-full.svg,9.2 km/h,100%
 2025-04-06T08:29:28.869109+07:00,Huế,81,/dl/web/weather/ic-w-06-rain-full.svg,9.2 km/h,100%
 2025-04-06T09:29:38.926805+07:00,Huế,81,/dl/web/weather/ic-w-06-rain-full.svg,9.2 km/h,100%
+2025-04-06T10:15:22.125142+07:00,Huế,81,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,7.4 km/h,94%
