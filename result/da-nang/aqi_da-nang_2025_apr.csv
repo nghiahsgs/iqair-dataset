@@ -429,3 +429,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-04-19T00:01:51.318079+07:00,Đà Nẵng,104,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,5.5 km/h,83%
 2025-04-19T01:01:55.929372+07:00,Đà Nẵng,93,/dl/web/weather/ic-w-07-thunderstorms-full.svg,3.7 km/h,89%
 2025-04-19T02:01:34.676533+07:00,Đà Nẵng,90,/dl/web/weather/ic-w-07-thunderstorms-full.svg,3.7 km/h,89%
+2025-04-19T03:01:41.984357+07:00,Đà Nẵng,124,/dl/web/weather/ic-w-11-night-few-clouds-full.svg,5.5 km/h,89%
