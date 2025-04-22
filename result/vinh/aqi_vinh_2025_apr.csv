@@ -520,3 +520,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-04-22T22:02:11.518320+07:00,Vinh,107,/dl/web/weather/ic-w-11-night-few-clouds-full.svg,2.7 km/h,76%
 2025-04-22T23:02:26.538542+07:00,Vinh,94,/dl/web/weather/ic-w-11-night-few-clouds-full.svg,8.7 km/h,81%
 2025-04-23T00:02:01.197800+07:00,Vinh,99,/dl/web/weather/ic-w-11-night-few-clouds-full.svg,4.5 km/h,84%
+2025-04-23T01:02:15.107205+07:00,Vinh,124,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,3.1 km/h,81%
