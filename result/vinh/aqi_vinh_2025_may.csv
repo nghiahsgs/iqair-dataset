@@ -38,3 +38,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-05-02T12:02:24.653052+07:00,Vinh,90,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,7.9 km/h,65%
 2025-05-02T13:02:35.624579+07:00,Vinh,73,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,7.9 km/h,65%
 2025-05-02T14:02:09.573957+07:00,Vinh,66,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,9.3 km/h,65%
+2025-05-02T15:02:24.533442+07:00,Vinh,66,/dl/web/weather/ic-w-02-new-clouds-full.svg,15.3 km/h,69%
