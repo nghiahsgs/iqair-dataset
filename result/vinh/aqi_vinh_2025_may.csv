@@ -43,3 +43,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-05-02T17:02:16.040564+07:00,Vinh,69,/dl/web/weather/ic-w-02-new-clouds-full.svg,15.3 km/h,75%
 2025-05-02T18:02:10.315857+07:00,Vinh,71,/dl/web/weather/ic-w-02-new-clouds-full.svg,15.3 km/h,75%
 2025-05-02T19:02:39.939014+07:00,Vinh,82,/dl/web/weather/ic-w-11-night-few-clouds-full.svg,10.9 km/h,85%
+2025-05-02T20:08:58.977384+07:00,Vinh,110,/dl/web/weather/ic-w-10-night-clear-sky-full.svg,8.2 km/h,88%
