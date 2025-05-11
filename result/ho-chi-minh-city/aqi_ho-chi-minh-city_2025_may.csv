@@ -257,3 +257,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-05-11T17:01:41.225520+07:00,Hồ Chí Minh,64,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,9.2 km/h,63%
 2025-05-11T18:01:38.663621+07:00,Hồ Chí Minh,53,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,18.5 km/h,71%
 2025-05-11T19:01:52.519530+07:00,Hồ Chí Minh,44,/dl/web/weather/ic-w-12-night-rain-full.svg,14.8 km/h,71%
+2025-05-11T20:06:37.677386+07:00,Hồ Chí Minh,53,/dl/web/weather/ic-w-07-thunderstorms-full.svg,29.6 km/h,76%
