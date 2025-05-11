@@ -250,3 +250,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-05-11T10:20:25.065966+07:00,Đà Nẵng,64,/dl/web/weather/ic-w-06-rain-full.svg,7.4 km/h,70%
 2025-05-11T11:03:09.913898+07:00,Đà Nẵng,64,/dl/web/weather/ic-w-06-rain-full.svg,5.5 km/h,62%
 2025-05-11T12:01:57.879677+07:00,Đà Nẵng,66,/dl/web/weather/ic-w-06-rain-full.svg,5.5 km/h,62%
+2025-05-11T13:02:04.786893+07:00,Đà Nẵng,66,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,18.5 km/h,62%
