@@ -615,3 +615,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-05-26T15:04:12.106036+07:00,Vinh,132,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,6.4 km/h,84%
 2025-05-26T17:06:01.709560+07:00,Vinh,158,/dl/web/weather/ic-w-04-scattered-clouds-full.svg,8.4 km/h,87%
 2025-05-26T18:02:05.561020+07:00,Vinh,154,/dl/web/weather/ic-w-06-rain-full.svg,9.7 km/h,89%
+2025-05-26T19:02:35.553205+07:00,Vinh,162,/dl/web/weather/ic-w-12-night-rain-full.svg,7.6 km/h,91%
