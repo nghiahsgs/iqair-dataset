@@ -415,3 +415,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-07-19T05:02:09.891645+07:00,Vinh,22,/dl/web/weather/ic-weather-04n.svg,10.9 km/h,85%
 2025-07-19T06:02:09.817897+07:00,Vinh,22,/dl/web/weather/ic-weather-04d.svg,10.6 km/h,86%
 2025-07-19T07:06:00.597278+07:00,Vinh,28,/dl/web/weather/ic-weather-04d.svg,9.8 km/h,83%
+2025-07-19T08:30:00.256673+07:00,Vinh,28,/dl/web/weather/ic-weather-04d.svg,10.1 km/h,77%
