@@ -1,3 +1,4 @@
 timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-08-01T00:04:27.963325+07:00,Hải Phòng,110,/dl/web/weather/ic-weather-10n.svg,9.5 km/h,81%
 2025-08-01T01:02:09.327986+07:00,Hải Phòng,81,/dl/web/weather/ic-weather-04n.svg,5.0 km/h,86%
+2025-08-01T02:03:36.082456+07:00,Hải Phòng,81,/dl/web/weather/ic-weather-10n.svg,4.7 km/h,84%
