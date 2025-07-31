@@ -1,0 +1,2 @@
+timestamp,city,aqi,weather_icon,wind_speed,humidity
+2025-08-01T00:04:48.102621+07:00,Vinh,58,/dl/web/weather/ic-weather-04n.svg,13.2 km/h,74%
