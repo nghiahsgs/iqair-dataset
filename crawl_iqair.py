@@ -69,8 +69,11 @@ def validate_aqi(aqi: str) -> Optional[str]:
 
 def validate_weather_icon(icon: str) -> Optional[str]:
     """Validate weather icon URL"""
-    if icon and isinstance(icon, str) and icon.startswith('/dl/web/weather/'):
-        return icon
+    if icon and isinstance(icon, str):
+        # New format: /dl/assets/svg/weather/ic-weather-01n.svg
+        # Old format: /dl/web/weather/...
+        if icon.startswith('/dl/assets/svg/weather/') or icon.startswith('/dl/web/weather/'):
+            return icon
     return None
 
 def validate_wind_speed(speed: str) -> Optional[str]:
@@ -102,53 +105,73 @@ def validate_humidity(humidity: str) -> Optional[str]:
     return None
 
 def crawl_city_data(page, city: Dict) -> Optional[Dict]:
-    """Crawl data for a specific city"""
+    """Crawl data for a specific city using updated IQAir website structure (2024+)
+
+    Raises exception for transient errors (browser closed, timeout) to allow retry.
+    Returns None for data validation failures (no retry needed).
+    """
     print(f"\nAccessing {city['display_name']} ({city['url']})...")
-    
-    try:
-        # Navigate to city page
-        page.goto(city['url'])
-        
-        # Wait for content to load
-        page.wait_for_selector(".aqi-value__estimated")
-        
-        # Extract and validate data
-        aqi_raw = page.query_selector(".aqi-value__estimated").text_content()
-        weather_icon_raw = page.query_selector(".air-quality-forecast-container-weather__icon").get_attribute("src")
-        wind_speed_raw = page.query_selector(".air-quality-forecast-container-wind__label").text_content()
-        humidity_raw = page.query_selector(".air-quality-forecast-container-humidity__label").text_content()
-        
-        # Validate all fields
-        aqi = validate_aqi(aqi_raw)
-        weather_icon = validate_weather_icon(weather_icon_raw)
-        wind_speed = validate_wind_speed(wind_speed_raw)
-        humidity = validate_humidity(humidity_raw)
-        
-        # If any validation fails, return None
-        if not all([aqi, weather_icon, wind_speed, humidity]):
-            print(f"Invalid data found for {city['display_name']}:")
-            if not aqi: print(f"  - Invalid AQI: {aqi_raw}")
-            if not weather_icon: print(f"  - Invalid weather icon: {weather_icon_raw}")
-            if not wind_speed: print(f"  - Invalid wind speed: {wind_speed_raw}")
-            if not humidity: print(f"  - Invalid humidity: {humidity_raw}")
-            return None
-        
-        # Create data dictionary with Vietnam time
-        current_time = get_vietnam_time()
-        data = {
-            "timestamp": current_time.isoformat(),
-            "city": city['display_name'],
-            "aqi": aqi,
-            "weather_icon": weather_icon,
-            "wind_speed": wind_speed,
-            "humidity": humidity
-        }
-        
-        return data
-        
-    except Exception as e:
-        print(f"Error extracting data for {city['display_name']}: {str(e)}")
+
+    # Navigate to city page - use domcontentloaded for faster initial load
+    page.goto(city['url'], wait_until='domcontentloaded', timeout=45000)
+
+    # Wait for the main AQI box to appear (new structure uses aqi-box-shadow classes)
+    page.wait_for_selector('[class*="aqi-box-shadow"]', timeout=30000)
+
+    # Small delay to ensure content is fully rendered
+    page.wait_for_timeout(2000)
+
+    # Extract data from the main AQI box
+    main_box = page.query_selector('[class*="aqi-box-shadow"]')
+    if not main_box:
+        print(f"Could not find AQI box for {city['display_name']}")
         return None
+
+    box_text = main_box.text_content()
+
+    # Extract AQI value (first number in the text, e.g., "187AQI⁺ Mỹ...")
+    aqi_match = re.search(r'^(\d+)', box_text)
+    aqi_raw = aqi_match.group(1) if aqi_match else None
+
+    # Extract wind speed (e.g., "7.1 km/h")
+    wind_match = re.search(r'(\d+\.?\d*)\s*km/h', box_text)
+    wind_speed_raw = wind_match.group(0) if wind_match else None
+
+    # Extract humidity (e.g., "95 %" or "95%")
+    humidity_match = re.search(r'(\d{1,3})\s*%', box_text)
+    humidity_raw = humidity_match.group(0).replace(' ', '') if humidity_match else None
+
+    # Extract weather icon from img tag
+    weather_icon_el = page.query_selector('img[src*="ic-weather-"]')
+    weather_icon_raw = weather_icon_el.get_attribute('src') if weather_icon_el else None
+
+    # Validate all fields
+    aqi = validate_aqi(aqi_raw) if aqi_raw else None
+    weather_icon = validate_weather_icon(weather_icon_raw)
+    wind_speed = validate_wind_speed(wind_speed_raw) if wind_speed_raw else None
+    humidity = validate_humidity(humidity_raw) if humidity_raw else None
+
+    # If any validation fails, return None
+    if not all([aqi, weather_icon, wind_speed, humidity]):
+        print(f"Invalid data found for {city['display_name']}:")
+        if not aqi: print(f"  - Invalid AQI: {aqi_raw}")
+        if not weather_icon: print(f"  - Invalid weather icon: {weather_icon_raw}")
+        if not wind_speed: print(f"  - Invalid wind speed: {wind_speed_raw}")
+        if not humidity: print(f"  - Invalid humidity: {humidity_raw}")
+        return None
+
+    # Create data dictionary with Vietnam time
+    current_time = get_vietnam_time()
+    data = {
+        "timestamp": current_time.isoformat(),
+        "city": city['display_name'],
+        "aqi": aqi,
+        "weather_icon": weather_icon,
+        "wind_speed": wind_speed,
+        "humidity": humidity
+    }
+
+    return data
 
 def save_to_csv(data: Dict, city_name: str):
     """Save data to CSV file for a specific city"""
@@ -179,45 +202,67 @@ def save_to_csv(data: Dict, city_name: str):
     return filepath
 
 def crawl_all_cities():
-    """Crawl data for all cities"""
+    """Crawl data for all cities with retry logic"""
+    import time as time_module
     results = []
+    max_retries = 3
+
     for city in CITIES:
         print(f"\n{'='*50}")
         print(f"Processing {city['display_name']}...")
-        try:
-            with sync_playwright() as p:
+        success = False
+
+        for attempt in range(max_retries):
+            if success:
+                break
+
+            playwright = None
+            browser = None
+            try:
+                # Manual lifecycle management for better control
+                playwright = sync_playwright().start()
+                browser = playwright.chromium.launch(
+                    headless=True,
+                    args=['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
+                )
+                context = browser.new_context(
+                    viewport={"width": 1280, "height": 720},
+                    user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                )
+                page = context.new_page()
+
+                # Set timeout for page operations
+                page.set_default_timeout(60000)  # 60 seconds timeout
+
+                data = crawl_city_data(page, city)
+                if data:  # Only process valid data
+                    results.append(data)
+                    # Save to CSV
+                    csv_file = save_to_csv(data, city['name'])
+                    print(f"Data saved to: {csv_file}")
+                    success = True
+                else:
+                    print(f"Skipping invalid data for {city['display_name']}")
+                    success = True  # Don't retry for invalid data
+
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    print(f"Attempt {attempt + 1} failed: {str(e)}")
+                    print(f"Retrying in 2 seconds...")
+                    time_module.sleep(2)
+                else:
+                    print(f"Failed after {max_retries} attempts: {str(e)}")
+
+            finally:
+                # Clean up resources
                 try:
-                    # Launch new browser for each city
-                    browser = p.chromium.launch(headless=True)
-                    page = browser.new_page()
-                    
-                    # Set viewport size for better rendering
-                    page.set_viewport_size({"width": 1280, "height": 720})
-                    
-                    # Add small delay for stability
-                    page.set_default_timeout(15000)  # 15 seconds timeout
-                    
-                    data = crawl_city_data(page, city)
-                    if data:  # Only process valid data
-                        results.append(data)
-                        # Save to CSV
-                        csv_file = save_to_csv(data, city['name'])
-                        print(f"Data saved to: {csv_file}")
-                    else:
-                        print(f"Skipping invalid data for {city['display_name']}")
-                
-                except Exception as e:
-                    print(f"Browser error for {city['display_name']}: {str(e)}")
-                    continue
-                
-                finally:
-                    if 'browser' in locals():
+                    if browser:
                         browser.close()
-        
-        except Exception as e:
-            print(f"Playwright error for {city['display_name']}: {str(e)}")
-            continue
-            
+                    if playwright:
+                        playwright.stop()
+                except Exception:
+                    pass
+
     return results
 
 if __name__ == "__main__":
