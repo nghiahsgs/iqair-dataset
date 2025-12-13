@@ -272,3 +272,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-12-13T04:01:30.132437+07:00,Hồ Chí Minh,90,/dl/assets/svg/weather/ic-weather-01n.svg,3.7 km/h,90%
 2025-12-13T05:01:38.075254+07:00,Hồ Chí Minh,95,/dl/assets/svg/weather/ic-weather-01n.svg,1.8 km/h,91%
 2025-12-13T06:02:02.825086+07:00,Hồ Chí Minh,99,/dl/assets/svg/weather/ic-weather-04n.svg,1.8 km/h,92%
+2025-12-13T07:04:46.523296+07:00,Hồ Chí Minh,122,/dl/assets/svg/weather/ic-weather-50n.svg,5.5 km/h,96%
