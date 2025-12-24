@@ -556,3 +556,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2025-12-25T00:01:48.579585+07:00,Vinh,69,/dl/assets/svg/weather/ic-weather-02n.svg,5.5 km/h,94%
 2025-12-25T01:02:45.229218+07:00,Vinh,62,/dl/assets/svg/weather/ic-weather-03n.svg,6 km/h,93%
 2025-12-25T02:01:50.598242+07:00,Vinh,62,/dl/assets/svg/weather/ic-weather-03n.svg,6.5 km/h,92%
+2025-12-25T03:02:19.382309+07:00,Vinh,66,/dl/assets/svg/weather/ic-weather-04n.svg,6.7 km/h,91%
