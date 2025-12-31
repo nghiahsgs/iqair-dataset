@@ -1,3 +1,4 @@
 timestamp,city,aqi,weather_icon,wind_speed,humidity
 2026-01-01T00:01:28.512972+07:00,Hồ Chí Minh,62,/dl/assets/svg/weather/ic-weather-01n.svg,16.7 km/h,80%
 2026-01-01T01:02:20.218634+07:00,Hồ Chí Minh,62,/dl/assets/svg/weather/ic-weather-01n.svg,13 km/h,80%
+2026-01-01T02:01:46.801204+07:00,Hồ Chí Minh,69,/dl/assets/svg/weather/ic-weather-01n.svg,7.4 km/h,80%
