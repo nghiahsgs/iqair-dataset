@@ -7,3 +7,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2026-01-01T05:02:04.281239+07:00,Đà Nẵng,77,/dl/assets/svg/weather/ic-weather-02n.svg,0 km/h,94%
 2026-01-01T06:01:45.871076+07:00,Đà Nẵng,86,/dl/assets/svg/weather/ic-weather-02n.svg,0 km/h,94%
 2026-01-01T07:06:05.288368+07:00,Đà Nẵng,81,/dl/assets/svg/weather/ic-weather-02n.svg,5.5 km/h,94%
+2026-01-01T08:30:24.096984+07:00,Đà Nẵng,77,/dl/assets/svg/weather/ic-weather-02d.svg,0 km/h,78%
