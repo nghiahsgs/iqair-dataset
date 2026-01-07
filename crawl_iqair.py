@@ -2,54 +2,76 @@ from playwright.sync_api import sync_playwright
 import json
 from datetime import datetime
 import csv
-import os
 import pathlib
 from zoneinfo import ZoneInfo
-from typing import Dict, List, Optional
+from typing import Dict, Optional
 import re
 
 # Define cities data
 CITIES = [
+    # Northern Vietnam
     {
         "name": "hanoi",
         "display_name": "Hà Nội",
-        "url": "https://www.iqair.com/vi/vietnam/hanoi/hanoi"
-    },
-    {
-        "name": "ho-chi-minh-city",
-        "display_name": "Hồ Chí Minh",
-        "url": "https://www.iqair.com/vi/vietnam/ho-chi-minh-city/ho-chi-minh-city"
-    },
-    {
-        "name": "da-nang",
-        "display_name": "Đà Nẵng",
-        "url": "https://www.iqair.com/vi/vietnam/da-nang/da-nang"
+        "url": "https://www.iqair.com/vi/vietnam/hanoi/hanoi",
     },
     {
         "name": "hai-phong",
         "display_name": "Hải Phòng",
-        "url": "https://www.iqair.com/vi/vietnam/thanh-pho-hai-phong/haiphong"
+        "url": "https://www.iqair.com/vi/vietnam/thanh-pho-hai-phong/haiphong",
     },
     {
-        "name": "nha-trang",
-        "display_name": "Nha Trang",
-        "url": "https://www.iqair.com/vi/vietnam/khanh-hoa/nha-trang"
+        "name": "bac-ninh",
+        "display_name": "Bắc Ninh",
+        "url": "https://www.iqair.com/vi/vietnam/tinh-bac-ninh/bac-ninh",
     },
+    # Central Vietnam
     {
-        "name": "can-tho",
-        "display_name": "Cần Thơ",
-        "url": "https://www.iqair.com/vi/vietnam/thanh-pho-can-tho/can-tho"
+        "name": "vinh",
+        "display_name": "Vinh",
+        "url": "https://www.iqair.com/vi/vietnam/tinh-nghe-an/vinh",
     },
     {
         "name": "hue",
         "display_name": "Huế",
-        "url": "https://www.iqair.com/vietnam/tinh-thua-thien-hue/hue"
+        "url": "https://www.iqair.com/vietnam/tinh-thua-thien-hue/hue",
     },
     {
-        "name": "vinh",
-        "display_name": "Vinh",
-        "url": "https://www.iqair.com/vi/vietnam/tinh-nghe-an/vinh"
-    }
+        "name": "da-nang",
+        "display_name": "Đà Nẵng",
+        "url": "https://www.iqair.com/vi/vietnam/da-nang/da-nang",
+    },
+    {
+        "name": "nha-trang",
+        "display_name": "Nha Trang",
+        "url": "https://www.iqair.com/vi/vietnam/khanh-hoa/nha-trang",
+    },
+    {
+        "name": "da-lat",
+        "display_name": "Đà Lạt",
+        "url": "https://www.iqair.com/vi/vietnam/tinh-lam-dong/da-lat",
+    },
+    {
+        "name": "phan-thiet",
+        "display_name": "Phan Thiết",
+        "url": "https://www.iqair.com/vi/vietnam/tinh-binh-thuan/phan-thiet",
+    },
+    # Southern Vietnam
+    {
+        "name": "ho-chi-minh-city",
+        "display_name": "Hồ Chí Minh",
+        "url": "https://www.iqair.com/vi/vietnam/ho-chi-minh-city/ho-chi-minh-city",
+    },
+    {
+        "name": "vung-tau",
+        "display_name": "Hồ Chí Minh",
+        "url": "https://www.iqair.com/vi/vietnam/ho-chi-minh-city/ho-chi-minh-city",
+    },
+    {
+        "name": "can-tho",
+        "display_name": "Cần Thơ",
+        "url": "https://www.iqair.com/vi/vietnam/thanh-pho-can-tho/can-tho",
+    },
 ]
 
 def get_vietnam_time():

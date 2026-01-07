@@ -1,2 +1,8 @@
+# Core dependencies for crawling
 playwright==1.41.0
-python-dotenv==1.0.0
+
+# Dependencies for chart generation
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+unidecode>=1.3.0
