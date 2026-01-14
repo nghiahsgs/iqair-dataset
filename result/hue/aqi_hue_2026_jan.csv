@@ -320,3 +320,4 @@ timestamp,city,aqi,weather_icon,wind_speed,humidity
 2026-01-14T06:01:58.053137+07:00,Huế,78,/dl/assets/svg/weather/ic-weather-50n.svg,0 km/h,94%
 2026-01-14T07:06:08.115778+07:00,Huế,80,/dl/assets/svg/weather/ic-weather-50d.svg,1.8 km/h,94%
 2026-01-14T08:30:32.545592+07:00,Huế,83,/dl/assets/svg/weather/ic-weather-50d.svg,0 km/h,94%
+2026-01-14T09:41:15.849589+07:00,Huế,82,/dl/assets/svg/weather/ic-weather-04d.svg,1.8 km/h,78%
