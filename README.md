@@ -76,24 +76,43 @@ git clone https://github.com/nghiahsgs/iqair-dataset.git
 cd iqair-dataset
 ```
 
-2. Cài đặt các thư viện cần thiết:
+2. Tạo và kích hoạt môi trường ảo (virtual environment):
+```bash
+# Tạo môi trường ảo
+python -m venv .venv
+
+# Kích hoạt môi trường ảo
+# Trên Linux/macOS:
+source .venv/bin/activate
+
+# Trên Windows:
+# .venv\Scripts\activate
+```
+
+3. Cài đặt các thư viện cần thiết:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Cài đặt Chromium cho Playwright:
+4. Cài đặt Chromium cho Playwright:
 ```bash
 playwright install chromium
 ```
 
 ### Chạy dự án
 
-1. Chạy script crawl dữ liệu:
+1. Đảm bảo môi trường ảo đã được kích hoạt:
+```bash
+source .venv/bin/activate  # Linux/macOS
+# hoặc .venv\Scripts\activate trên Windows
+```
+
+2. Chạy script crawl dữ liệu:
 ```bash
 python crawl_iqair.py
 ```
 
-2. Dữ liệu sau khi crawl sẽ được lưu vào thư mục `result/` dưới dạng file CSV
+3. Dữ liệu sau khi crawl sẽ được lưu vào thư mục `result/` dưới dạng file CSV
 
 ### Lưu ý
 - Script được thiết kế để chạy tự động mỗi giờ thông qua GitHub Actions
