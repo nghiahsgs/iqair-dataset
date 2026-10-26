@@ -1,5 +1,7 @@
 # Dự Án Thu Thập Dữ Liệu Chất Lượng Không Khí
 
+> **⚠️ Dự án đã ngừng (archived, 10/2026).** Từ khoảng tháng 3/2026, iqair.com bật Vercel Security Checkpoint và chặn truy cập từ GitHub Actions, nên crawler không lấy được dữ liệu nữa. Dữ liệu trong `result/` chỉ có đến tháng 3/2026.
+
 ## Giới thiệu
 
 Hiện nay, nhiều thành phố ở Việt Nam đang phải đối mặt với vấn đề ô nhiễm không khí nghiêm trọng, đặc biệt là tại các thành phố lớn như Hà Nội. Tuy nhiên, chúng ta vẫn thiếu một bộ dữ liệu công khai và minh bạch để các nhà khoa học, nhà nghiên cứu môi trường có thể phân tích và tìm ra nguyên nhân cũng như giải pháp cho vấn đề này.
